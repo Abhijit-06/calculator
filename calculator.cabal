@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: d70924cd1d22172c0cc5e2868560fb682a37329a67e29ee2714ce76b8ebd3371
+-- hash: a060a20b291badc69aef53551fd37be6084c35330d6f6ed457b7fb9861553ce2
 
 name:           calculator
 version:        0.1.0.0
@@ -27,6 +27,8 @@ source-repository head
 
 library
   exposed-modules:
+      BoolBlindness
+      IllegalStateWithADT
       Password
       Player
       Tag
@@ -38,6 +40,7 @@ library
   build-depends:
       base >=4.7 && <5
     , bytestring
+    , containers
   default-language: Haskell2010
 
 executable calculator-exe
@@ -51,6 +54,7 @@ executable calculator-exe
       base >=4.7 && <5
     , bytestring
     , calculator
+    , containers
   default-language: Haskell2010
 
 test-suite calculator-test
@@ -65,4 +69,5 @@ test-suite calculator-test
       base >=4.7 && <5
     , bytestring
     , calculator
+    , containers
   default-language: Haskell2010
