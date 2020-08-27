@@ -5,16 +5,16 @@ module IllegalStateWithADT where
 type Backend = Int
 type Frontend = [Int]
 
--- This not working
---data Settings = Backend | Frontend deriving (Show)
+-- this not working
+--data settings = backend | frontend deriving (show)
 data Configuration
     = OnlyBackend Backend 
-    | OnlyFrontEnd Frontend
+    | OnlyFrontend Frontend
     | BothSettings Frontend Backend 
     deriving (Show)
 
 runApp :: Configuration -> IO ()
 runApp config = case config of
     OnlyBackend back -> print $ "Backkkkk"
-    OnlyFrontEnd back -> print $ "FrontEnd"
+    OnlyFrontend back -> print $ "FrontEnd"
     BothSettings front back -> print $ "Both of them"
